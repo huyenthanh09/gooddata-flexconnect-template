@@ -14,7 +14,7 @@
 # - 127.0.0.1 - to bind to localhost only (unreachable via outside network)
 # - custom address to bind to
 #
-listen_host = "0.0.0.0"
+listen_host = "127.0.0.1"
 
 # port on which the Flight RPC server should listen
 listen_port = 17001
@@ -38,7 +38,7 @@ listen_port = 17001
 #
 # Without the 'advertise_host', the GetFlightInfo would return Location referencing
 # some internal / randomly assigned hostname that is unreachable from your workstation.
-advertise_host = "222.253.156.128"
+advertise_host = "127.0.0.1"
 
 # port number to use when sending this server's Flight RPC location to clients.
 # Defaults to value of 'listen_port'.
@@ -53,7 +53,7 @@ advertise_host = "222.253.156.128"
 #
 # Analogous to the host example (see above), the Dockerized server needs to send
 # location with port number that can be reached from your workstation.
-advertise_port = 80
+advertise_port = 17001
 
 #######################################################################
 # TLS Setup
@@ -245,7 +245,7 @@ otel_exporter_type = "none"
 #
 # Alternatively, you can implement your own strategy for verifying
 # tokens. See the option below.
-authentication_method = "token"
+authentication_method = "none"
 
 # Specify strategy to use for verifying tokens.
 #
@@ -266,7 +266,7 @@ authentication_method = "token"
 # Upon startup, the server will try to dynamically import and
 # load your implementation of TokenVerificationStrategy from the
 # specified module.
-token_verification = "EnumeratedTokenVerification"
+# token_verification = "EnumeratedTokenVerification"
 
 # Optionally specify header name that is expected to carry the
 # token.
